@@ -1,0 +1,210 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Repository</name>
+    </assembly>
+    <members>
+        <member name="M:Repository.AbstractRepository`1.SaveChanges">
+            <summary>
+            변경된 DB를 저장 합니다.
+            </summary>
+            <returns>성공 : true, 실패 : false</returns>
+        </member>
+        <member name="M:Repository.AbstractRepository`1.SaveChangesAsync">
+            <summary>
+            변경된 DB를 비동기로 저장 합니다.
+            </summary>
+            <returns>성공 : true, 실패 : false</returns>
+        </member>
+        <member name="M:Repository.AbstractRepository`1.Add``1(``0)">
+            <summary>
+            해당 테이블에 데이터를 추가합니다.
+            </summary>
+            <typeparam name="TEntity">DB 테이블 명</typeparam>
+            <param name="entity">추가 될 테이블 데이터</param>
+        </member>
+        <member name="M:Repository.AbstractRepository`1.AddAsync``1(``0)">
+            <summary>
+            해당 테이블에 데이터를 비동기로 추가합니다.
+            </summary>
+            <typeparam name="TEntity">DB 테이블 명</typeparam>
+            <param name="entity">추가 될 테이블 데이터</param>
+        </member>
+        <member name="M:Repository.AbstractRepository`1.FindById``2(``1)">
+            <summary>
+            해당 테이블에서 ID로 데이터를 찾습니다.
+            </summary>
+            <typeparam name="TEntity">DB 테이블 명</typeparam>
+            <typeparam name="TIdentity">ID 데이터 타입</typeparam>
+            <param name="id">테이블에서 찾을 데이터의 ID</param>
+            <returns>찾으면 데이터를 반환하고 못찾을 시 null을 반환</returns>
+        </member>
+        <member name="M:Repository.AbstractRepository`1.FindByIdAsync``2(``1)">
+            <summary>
+            해당 테이블에서 ID로 데이터를 비동기로 찾습니다.
+            </summary>
+            <typeparam name="TEntity">DB 테이블 명</typeparam>
+            <typeparam name="TIdentity">ID 데이터 타입</typeparam>
+            <param name="id">테이블에서 찾을 데이터의 ID</param>
+            <returns>찾으면 데이터를 반환하고 못찾을 시 null을 반환</returns>
+        </member>
+        <member name="M:Repository.AbstractRepository`1.FindAll``1">
+            <summary>
+            해당 테이블의 데이터를 모두 가져옵니다.
+            </summary>
+            <typeparam name="TEntity">DB 테이블 명</typeparam>
+            <returns>테이블 데이터들</returns>
+        </member>
+        <member name="M:Repository.AbstractRepository`1.Find``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            조건에 맞는 테이블의 데이터를 찾습니다. 조건식에 문제가 발생시 예외를 발생 시킵니다.
+            </summary>
+            <typeparam name="TEntity">DB 테이블명</typeparam>
+            <param name="predicate">찾을 조건 식</param>
+            <returns>조건식에 필터된 테이블을 반환</returns>
+        </member>
+        <member name="M:Repository.AbstractRepository`1.FindAsync``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            조건에 맞는 테이블의 데이터를 비동기로 찾습니다. 조건식에 문제가 발생시 예외를 발생 시킵니다.
+            </summary>
+            <typeparam name="TEntity">DB 테이블명</typeparam>
+            <param name="predicate">찾을 조건 식</param>
+            <returns>조건식에 필터된 테이블을 반환</returns>
+        </member>
+        <member name="M:Repository.AbstractRepository`1.Remove``1(``0)">
+            <summary>
+            테이블에 선택된 데이터를 삭제합니다.
+            </summary>
+            <typeparam name="TEntity">DB 테이블명</typeparam>
+            <param name="entity">삭제 할 테이블 데이터</param>
+        </member>
+        <member name="M:Repository.AbstractRepository`1.RemoveRange``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            테이블에서 선택된 데이터들을 삭제합니다.
+            </summary>
+            <typeparam name="TEntity">DB 테이블 명</typeparam>
+            <param name="entities">삭제할 테이블 데이터 들</param>
+        </member>
+        <member name="M:Repository.AbstractRepository`1.GetRange``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Int32,System.Int32)">
+            <summary>
+            테이블에서 조건에 맞는 데이터들의 일부를 정렬하지 않는 상태로 얻습니다. 문제가 발생시 예외를 발생합니다.
+            </summary>
+            <typeparam name="TEntity">DB 테이블 명</typeparam>
+            <param name="predicate">찾을 데이터의 조건식</param>
+            <param name="skip">생략 횟수</param>
+            <param name="take">찾을 갯수</param>
+            <returns>조건에 맞는 데이터들의 일부</returns>
+        </member>
+        <member name="M:Repository.AbstractRepository`1.GetRangeAsync``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Int32,System.Int32)">
+            <summary>
+            테이블에서 조건에 맞는 데이터들의 일부를 정렬하지 않는 상태로 비동기로 얻습니다. 문제가 발생시 예외를 발생합니다.
+            </summary>
+            <typeparam name="TEntity">DB 테이블 명</typeparam>
+            <param name="predicate">찾을 데이터의 조건식</param>
+            <param name="skip">생략 횟수</param>
+            <param name="take">찾을 갯수</param>
+            <returns>조건에 맞는 데이터들의 일부</returns>
+        </member>
+        <member name="M:Repository.IRepository.SaveChanges">
+            <summary>
+            변경된 DB를 저장 합니다.
+            </summary>
+            <returns>성공 : true, 실패 : false</returns>
+        </member>
+        <member name="M:Repository.IRepository.SaveChangesAsync">
+            <summary>
+            변경된 DB를 비동기로 저장 합니다.
+            </summary>
+            <returns>성공 : true, 실패 : false</returns>
+        </member>
+        <member name="M:Repository.IRepository.Add``1(``0)">
+            <summary>
+            해당 테이블에 데이터를 추가합니다.
+            </summary>
+            <typeparam name="TEntity">DB 테이블 명</typeparam>
+            <param name="entity">추가 될 테이블 데이터</param>
+        </member>
+        <member name="M:Repository.IRepository.AddAsync``1(``0)">
+            <summary>
+            해당 테이블에 데이터를 비동기로 추가합니다.
+            </summary>
+            <typeparam name="TEntity">DB 테이블 명</typeparam>
+            <param name="entity">추가 될 테이블 데이터</param>
+        </member>
+        <member name="M:Repository.IRepository.Find``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            해당 테이블에서 ID로 데이터를 찾습니다.
+            </summary>
+            <typeparam name="TEntity">DB 테이블 명</typeparam>
+            <typeparam name="TIdentity">ID 데이터 타입</typeparam>
+            <param name="id">테이블에서 찾을 데이터의 ID</param>
+            <returns>찾으면 데이터를 반환하고 못찾을 시 null을 반환</returns>
+        </member>
+        <member name="M:Repository.IRepository.FindAll``1">
+            <summary>
+            해당 테이블에서 ID로 데이터를 비동기로 찾습니다.
+            </summary>
+            <typeparam name="TEntity">DB 테이블 명</typeparam>
+            <typeparam name="TIdentity">ID 데이터 타입</typeparam>
+            <param name="id">테이블에서 찾을 데이터의 ID</param>
+            <returns>찾으면 데이터를 반환하고 못찾을 시 null을 반환</returns>
+        </member>
+        <member name="M:Repository.IRepository.FindAsync``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            해당 테이블의 데이터를 모두 가져옵니다.
+            </summary>
+            <typeparam name="TEntity">DB 테이블 명</typeparam>
+            <returns>테이블 데이터들</returns>
+        </member>
+        <member name="M:Repository.IRepository.FindById``2(``1)">
+            <summary>
+            조건에 맞는 테이블의 데이터를 찾습니다. 조건식에 문제가 발생시 예외를 발생 시킵니다.
+            </summary>
+            <typeparam name="TEntity">DB 테이블명</typeparam>
+            <param name="predicate">찾을 조건 식</param>
+            <returns>조건식에 필터된 테이블을 반환</returns>
+        </member>
+        <member name="M:Repository.IRepository.FindByIdAsync``2(``1)">
+            <summary>
+            조건에 맞는 테이블의 데이터를 비동기로 찾습니다. 조건식에 문제가 발생시 예외를 발생 시킵니다.
+            </summary>
+            <typeparam name="TEntity">DB 테이블명</typeparam>
+            <param name="predicate">찾을 조건 식</param>
+            <returns>조건식에 필터된 테이블을 반환</returns>
+        </member>
+        <member name="M:Repository.IRepository.GetRange``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Int32,System.Int32)">
+            <summary>
+            테이블에서 조건에 맞는 데이터들의 일부를 정렬하지 않는 상태로 얻습니다. 문제가 발생시 예외를 발생합니다.
+            </summary>
+            <typeparam name="TEntity">DB 테이블 명</typeparam>
+            <param name="predicate">찾을 데이터의 조건식</param>
+            <param name="skip">생략 횟수</param>
+            <param name="take">찾을 갯수</param>
+            <returns>조건에 맞는 데이터들의 일부</returns>
+        </member>
+        <member name="M:Repository.IRepository.GetRangeAsync``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Int32,System.Int32)">
+            <summary>
+            테이블에서 조건에 맞는 데이터들의 일부를 정렬하지 않는 상태로 비동기로 얻습니다. 문제가 발생시 예외를 발생합니다.
+            </summary>
+            <typeparam name="TEntity">DB 테이블 명</typeparam>
+            <param name="predicate">찾을 데이터의 조건식</param>
+            <param name="skip">생략 횟수</param>
+            <param name="take">찾을 갯수</param>
+            <returns>조건에 맞는 데이터들의 일부</returns>
+        </member>
+        <member name="M:Repository.IRepository.Remove``1(``0)">
+            <summary>
+            테이블에 선택된 데이터를 삭제합니다.
+            </summary>
+            <typeparam name="TEntity">DB 테이블명</typeparam>
+            <param name="entity">삭제 할 테이블 데이터</param>
+        </member>
+        <member name="M:Repository.IRepository.RemoveRange``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            테이블에서 선택된 데이터들을 삭제합니다.
+            </summary>
+            <typeparam name="TEntity">DB 테이블 명</typeparam>
+            <param name="entities">삭제할 테이블 데이터 들</param>
+        </member>
+    </members>
+</doc>

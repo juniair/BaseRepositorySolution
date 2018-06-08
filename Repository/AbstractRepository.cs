@@ -10,7 +10,7 @@ namespace Repository
     public abstract class AbstractRepository<TDataBase> : IRepository where TDataBase : DbContext
     {
         protected readonly DbContext _context;
-        protected DbContext Context {  get { return _context; } }
+        protected virtual DbContext Context {  get { return _context; } }
 
         public AbstractRepository(DbContext context)
         {

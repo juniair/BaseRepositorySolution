@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CryptoService</name>
+    </assembly>
+    <members>
+        <member name="T:CryptoService.ICryptoService">
+            <summary>
+            암호화 서비스를 제공합니다.
+            </summary>
+        </member>
+        <member name="M:CryptoService.ICryptoService.Encrypyto(System.String)">
+            <summary>
+            암호화를 제공합니다.
+            </summary>
+            <param name="message">암호화 할 문자열</param>
+            <returns>암호화 된 문자열</returns>
+        </member>
+        <member name="M:CryptoService.ICryptoService.Decrypyto(System.String)">
+            <summary>
+            암호화 된 문자열을 복호화 합니다.(현재는 구현이 안되어 있습니다.)
+            </summary>
+            <param name="message">암호화 된 문자열</param>
+            <returns>복호화 된 문자열</returns>
+        </member>
+        <member name="T:CryptoService.SHA256.ISHA256CryptoService">
+            <summary>
+            SHA256 방식 암호화 서비스를 제공합니다.
+            </summary>
+        </member>
+        <member name="P:CryptoService.SHA256.ISHA256CryptoService.Encoder">
+            <summary>
+            인코딩 방식을 선택합니다.
+            </summary>
+        </member>
+        <member name="P:CryptoService.SHA256.SHA256CryptoService.Encoder">
+            <summary>
+            인코딩 방식을 선택합니다.
+            </summary>
+        </member>
+        <member name="F:CryptoService.SHA256.SHA256CryptoService._hasher">
+            <summary>
+            SHA256 암호화 엔진
+            </summary>
+        </member>
+        <member name="M:CryptoService.SHA256.SHA256CryptoService.Decrypyto(System.String)">
+            <summary>
+            암호화 된 문자열을 복호화 합니다.(현재는 구현이 안되어 있습니다.)
+            </summary>
+            <param name="message">암호화 된 문자열</param>
+            <returns>복호화 된 문자열</returns>
+        </member>
+        <member name="M:CryptoService.SHA256.SHA256CryptoService.Encrypyto(System.String)">
+            <summary>
+            암호화를 제공합니다.
+            </summary>
+            <param name="message">암호화 할 문자열</param>
+            <returns>암호화 된 문자열</returns>
+        </member>
+    </members>
+</doc>

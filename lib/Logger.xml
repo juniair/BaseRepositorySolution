@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Logger</name>
+    </assembly>
+    <members>
+        <member name="M:Logger.DBLogger.WriteLog(System.String)">
+            <summary>
+            Log를 작성합니다.
+            </summary>
+            <param name="message">작성할 message</param>
+        </member>
+        <member name="M:Logger.DBLogger.GetMaxMessageLength">
+            <summary>
+            메세지의 최대 길이를 구합니다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Logger.Provider.DBLoggerProvider.CreateLogger(System.String,System.Func{System.String,Microsoft.Extensions.Logging.LogLevel,System.Boolean})">
+            <summary>
+            Logger를 생성합니다.
+            </summary>
+            <param name="categoryName">Logger 카테고리 이름</param>
+            <param name="filter">Filter 함수</param>
+            <returns>Logger 구현체</returns>
+        </member>
+    </members>
+</doc>

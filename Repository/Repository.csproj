@@ -14,4 +14,8 @@
     </Reference>
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy &quot;$(TargetDir)$(ProjectName).dll&quot; &quot;$(SolutionDir)lib&quot; /Y&#xD;&#xA;xcopy &quot;$(TargetDir)$(ProjectName).xml&quot; &quot;$(SolutionDir)lib&quot; /Y" />
+  </Target>
+
 </Project>
